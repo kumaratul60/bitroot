@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 import Cards from "../components/Cards";
-import loader from "../assets/loader.gif";
+
+import { Oval } from "react-loader-spinner";
 
 function Home() {
   const [cardsData, setCardsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,6 +16,7 @@ function Home() {
       const apiResponse = await cardData.json();
       setCardsData(apiResponse);
       // console.log("res data", apiResponse);
+      setIsLoading(false);
     };
 
     fetchData().catch((err) => console.log(err));
@@ -21,9 +24,10 @@ function Home() {
 
   return (
     <div className="container d-flex flex-wrap justify-content-center min-vh-100 my-5">
-      {!cardsData ? (
-        <img src={loader} alt="loading" />
+      {isLoading || !cardsData ? (
+        <Oval color="#00BFFF" height={"75%"} width={150} />
       ) : (
+        // <Loader />
         cardsData?.map((cardData, index) => (
           <div key={index}>
             <Cards cardData={cardData} />
