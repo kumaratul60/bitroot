@@ -1,0 +1,28 @@
+.footer-data {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 1vw;
+}
+.card-dot {
+  display: flex;
+  margin-bottom: 1.3vh;
+}
+.card-dot-blue {
+  border-radius: 100%;
+  width: 1.7vw;
+  height: 1.7vw;
+  margin-right: 0.5vw;
+  background-color: rgb(49, 155, 182);
+}
+.card-dot-orange {
+  border-radius: 100%;
+  width: 1.7vw;
+  height: 1.7vw;
+  background-color: orange;
+}
+.card-modal-image {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin-right: 0.5vw;
+}
